@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15949641202475" configfile="/CarrascoIllescas-BryanExamen/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/ListarClientesEmp.xhtml" x="338" y="562" id="pf16273663342070" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" outlinks="pf16273663342071 pf16273663342072 pf16273663342073" inlinks="pf16273663342072 pf16273663342073 pf16273663342074 pf16273663342075 pf16273663342076 pf16273663342077 pf16273663342078 pf16273663342079" path="/PrivadaEmp/ListarClientesEmp.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/EditarClienteEm.xhtml" x="122" y="178" id="pf162736633420710" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf16273663342076 pf16273663342077" inlinks="pf16273663342071" path="/PrivadaEmp/EditarClienteEm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/ListarFacturas.xhtml" x="338" y="1330" id="pf162736633420711" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf162736633420712 pf162736633420713" inlinks="pf162736633420713 pf162736633420714 pf162736633420715" path="/PrivadaEmp/ListarFacturas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/EditarFactura.xhtml" x="122" y="1330" id="pf162736633420816" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf162736633420714 pf16273663342074" inlinks="pf162736633420712" path="/PrivadaEmp/EditarFactura.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/Facturacion.xhtml" x="122" y="946" id="pf162736633420817" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf162736633420715 pf16273663342075" path="/PrivadaEmp/Facturacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaEmp/RegistroClienteEmp.xhtml" x="122" y="562" id="pf162736633420818" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf16273663342078 pf16273663342079" path="/PrivadaEmp/RegistroClienteEmp.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaAdm/BodegaAdmin.xhtml" x="122" y="1714" id="pf162736633420819" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" outlinks="pf162736633420820 pf162736633420821" inlinks="pf162736633420821" path="/PrivadaAdm/BodegaAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="PrivadaAdm/VerBodega.xhtml" x="338" y="1714" id="pf162736633420822" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf162736633420820" path="/PrivadaAdm/VerBodega.xhtml"/>
+  <links id="pf16273663342071" target="pf162736633420710" source="pf16273663342070" outcome="editar"/>
+  <links id="pf162736633420712" target="pf162736633420816" source="pf162736633420711" outcome="modificarF"/>
+  <links id="pf162736633420714" target="pf162736633420711" source="pf162736633420816" outcome="guardado"/>
+  <links id="pf16273663342074" target="pf16273663342070" source="pf162736633420816" outcome="nn"/>
+  <links id="pf162736633420715" target="pf162736633420711" source="pf162736633420817" outcome="facturaCreada"/>
+  <links id="pf16273663342075" target="pf16273663342070" source="pf162736633420817" outcome="nn"/>
+  <links id="pf16273663342076" target="pf16273663342070" source="pf162736633420710" outcome="actualizado"/>
+  <links id="pf16273663342077" target="pf16273663342070" source="pf162736633420710" outcome="nn"/>
+  <links id="pf16273663342078" target="pf16273663342070" source="pf162736633420818" outcome="clienteR"/>
+  <links id="pf16273663342079" target="pf16273663342070" source="pf162736633420818" outcome="nn"/>
+  <links id="pf162736633420820" target="pf162736633420822" source="pf162736633420819" outcome="verP"/>
+  <links id="pf16273663342072" target="pf16273663342070" source="pf16273663342070" outcome="actualizado">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf16273663342073" target="pf16273663342070" source="pf16273663342070" outcome="eliminado">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+  <links id="pf162736633420713" target="pf162736633420711" source="pf162736633420711" outcome="borrarF">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf162736633420821" target="pf162736633420819" source="pf162736633420819" outcome="editadoB">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

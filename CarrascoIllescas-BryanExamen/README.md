@@ -1,0 +1,23 @@
+# Practica-4
+ aplicacion JEE usando JPA & JSF
+
+![001](https://user-images.githubusercontent.com/34029227/88308299-7ff23680-ccd2-11ea-88b6-5a9845e749d2.PNG)
+![002](https://user-images.githubusercontent.com/34029227/88308301-808acd00-ccd2-11ea-9939-b8fd8faf691d.PNG)
+![003](https://user-images.githubusercontent.com/34029227/88308304-808acd00-ccd2-11ea-9dd0-c998a40dd77d.PNG)
+![004](https://user-images.githubusercontent.com/34029227/88308305-81236380-ccd2-11ea-9232-d92cb201491d.PNG)
+![005](https://user-images.githubusercontent.com/34029227/88308306-81236380-ccd2-11ea-89cd-a48f55a88731.PNG)
+![006](https://user-images.githubusercontent.com/34029227/88308366-900a1600-ccd2-11ea-8557-5d8389b7d49f.PNG)
+![007](https://user-images.githubusercontent.com/34029227/88308369-900a1600-ccd2-11ea-8db1-8fc355f15275.PNG)
+![008](https://user-images.githubusercontent.com/34029227/88308371-90a2ac80-ccd2-11ea-99ef-e2d2097f1b49.PNG)
+![009](https://user-images.githubusercontent.com/34029227/88308374-90a2ac80-ccd2-11ea-91ad-9791da11d159.PNG)
+![010](https://user-images.githubusercontent.com/34029227/88308376-913b4300-ccd2-11ea-8431-8f2025070740.PNG)
+![011](https://user-images.githubusercontent.com/34029227/88308400-96988d80-ccd2-11ea-920b-5327c7654107.PNG)
+![012](https://user-images.githubusercontent.com/34029227/88308402-97312400-ccd2-11ea-94b8-8b041f8e5021.PNG)
+![013](https://user-images.githubusercontent.com/34029227/88308403-97c9ba80-ccd2-11ea-8edc-b7dc0b794c2b.PNG)
+![014](https://user-images.githubusercontent.com/34029227/88308405-98625100-ccd2-11ea-9a21-e9f600d9f1fe.PNG)
+![015](https://user-images.githubusercontent.com/34029227/88308408-98625100-ccd2-11ea-87d2-5e314f33c896.PNG)
+![016](https://user-images.githubusercontent.com/34029227/88308423-9dbf9b80-ccd2-11ea-8031-d922de697b9b.PNG)
+![019](https://user-images.githubusercontent.com/34029227/88308428-9e583200-ccd2-11ea-9fe9-2474ebfce401.PNG)
+![020](https://user-images.githubusercontent.com/34029227/88308430-9ef0c880-ccd2-11ea-9f77-f14b3316efbd.PNG)
+![021](https://user-images.githubusercontent.com/34029227/88308433-9f895f00-ccd2-11ea-8b50-b27b00f95ef0.PNG)
+![022](https://user-images.githubusercontent.com/34029227/88308436-9f895f00-ccd2-11ea-9cb6-8f8135b56772.PNG)
