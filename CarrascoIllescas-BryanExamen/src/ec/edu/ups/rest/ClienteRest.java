@@ -26,7 +26,7 @@ public class ClienteRest {
 	private Cliente clientes;
 	
 	@POST
-	@Path("/registrar")
+	@Path("/add")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response registrarCliente(@FormParam("cedula") String cedula,
@@ -36,11 +36,11 @@ public class ClienteRest {
 									@FormParam("direccion")String direccion,
 									@FormParam("telefono") String telefono) throws IOException{
 			Cliente cli = new Cliente();
-			cli.setCedula(cedula);
-			cli.setNombre(nombre);
 			cli.setApellido(apellido);
+			cli.setCedula(cedula);
 			cli.setCorreo(correo);
 			cli.setDireccion(direccion);
+			cli.setNombre(nombre);
 			cli.setTelefono(telefono);
 	
 			try {
