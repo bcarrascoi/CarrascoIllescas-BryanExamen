@@ -7,6 +7,7 @@
 		<class>ec.edu.ups.entidad.Restaurante</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="eclipselink.deploy-on-startup" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>
