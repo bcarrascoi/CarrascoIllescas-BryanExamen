@@ -127,7 +127,7 @@ public class ClienteBean implements Serializable{
 	}
 
 	public String registrarCliente() {
-		System.out.println("");
+		System.out.println("Nombre:" + this.nombre + "cedula: " +this.cedula);
 		
 		try {
 			Cliente cli = new Cliente();
