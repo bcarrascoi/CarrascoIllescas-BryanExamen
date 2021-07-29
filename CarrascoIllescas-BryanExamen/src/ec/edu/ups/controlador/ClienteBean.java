@@ -53,7 +53,6 @@ public class ClienteBean implements Serializable{
 		this.lista = lista;
 	}
 	
-
 	public ClienteFacade getEjClienteFacade() {
 		return ejClienteFacade;
 	}
@@ -126,7 +125,7 @@ public class ClienteBean implements Serializable{
 		this.telefono = telefono;
 	}
 
-	public String registrarCliente() {
+	public String add() {
 		System.out.println("Nombre:" + this.nombre + "cedula: " +this.cedula);
 		
 		try {
