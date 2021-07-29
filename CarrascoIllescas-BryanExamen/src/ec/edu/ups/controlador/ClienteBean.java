@@ -144,7 +144,7 @@ public class ClienteBean implements Serializable{
 			e.printStackTrace();
 			System.out.println("Error al registrar");
 		}
-		return "";
+		return "index.html";
 	}
 	
 	public String buscarCliente() {
