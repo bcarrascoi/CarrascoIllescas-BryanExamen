@@ -28,8 +28,9 @@ public class ReservaRest {
 	@Produces(MediaType.TEXT_PLAIN)
 	
 	public Response registrarReserva(@FormParam("numPersonas") Integer numPersonas,
-									@FormParam("fechaReserva") Date fechaReserva,
-									@FormParam("horaReserva") String horaReserva) throws IOException{
+									@FormParam("fechaReserva") String fechaReserva,
+									@FormParam("horaReserva") String horaReserva
+									) throws IOException{
 		
 		Reserva res = new Reserva();
 		res.setNumPersonas(numPersonas);

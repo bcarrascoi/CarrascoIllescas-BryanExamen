@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Reserva implements Serializable{
+public class Reserva implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -24,25 +24,25 @@ public class Reserva implements Serializable{
 	@JsonbProperty
 	private int numPersonas;
 	@JsonbProperty
-	private Date fechaReserva;
+	private String fechaReserva;
 	@JsonbProperty
 	private String horaReserva;
-	
+
 	@ManyToOne
-	@JoinColumn(name="cliente_id", nullable = false)
+	@JoinColumn(name = "cliente_id", nullable = false)
 	@JsonbTransient
 	private Cliente cliente;
-	
+
 	@ManyToOne
-	@JoinColumn(name="restaurante_id",nullable = false)
+	@JoinColumn(name = "restaurante_id", nullable = false)
 	@JsonbTransient
 	private Restaurante restaurante;
-	
+
 	public Reserva() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reserva(int codigoReserva, int numPersonas, Date fechaReserva, String horaReserva, Cliente cliente,
+	public Reserva(int codigoReserva, int numPersonas, String fechaReserva, String horaReserva, Cliente cliente,
 			Restaurante restaurante) {
 		super();
 		this.codigoReserva = codigoReserva;
@@ -69,11 +69,11 @@ public class Reserva implements Serializable{
 		this.numPersonas = numPersonas;
 	}
 
-	public Date getFechaReserva() {
+	public String getFechaReserva() {
 		return fechaReserva;
 	}
 
-	public void setFechaReserva(Date fechaReserva) {
+	public void setFechaReserva(String fechaReserva) {
 		this.fechaReserva = fechaReserva;
 	}
 
@@ -108,6 +108,4 @@ public class Reserva implements Serializable{
 				+ restaurante + "]";
 	}
 
-	
 }
-	

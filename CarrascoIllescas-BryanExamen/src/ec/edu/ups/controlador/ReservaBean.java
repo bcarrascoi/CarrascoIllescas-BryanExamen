@@ -29,7 +29,7 @@ public class ReservaBean  implements Serializable{
 	
 	private int codigoReserva;
 	private int numPersonas;
-	private Date fechaReserva;
+	private String fechaReserva;
 	private String horaReserva;
 	
 	public ReservaBean() {
@@ -83,11 +83,10 @@ public class ReservaBean  implements Serializable{
 		this.numPersonas = numPersonas;
 	}
 
-	public Date getFechaReserva() {
+	public String getFechaReserva() {
 		return fechaReserva;
 	}
-
-	public void setFechaReserva(Date fechaReserva) {
+	public void setFechaReserva(String fechaReserva) {
 		this.fechaReserva = fechaReserva;
 	}
 
