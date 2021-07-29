@@ -27,7 +27,7 @@ public class ClienteRest {
 	private Cliente clientes;
 	
 	@POST
-	@Path("/add")
+	@Path("add")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response registrarCliente(@FormParam("cedula") String cedula,

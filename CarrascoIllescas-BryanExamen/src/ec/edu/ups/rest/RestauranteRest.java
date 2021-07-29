@@ -28,7 +28,7 @@ public class RestauranteRest {
 	private Restaurante restaurantes;
 	
 	@POST
-	@Path("/registrar")
+	@Path("registrar")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response registrarRestaurante(@FormParam("nombreRest") String nombreRest,

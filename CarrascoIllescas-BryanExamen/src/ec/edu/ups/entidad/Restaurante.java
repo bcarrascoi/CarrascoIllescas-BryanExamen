@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class Restaurante implements Serializable {
@@ -32,7 +34,7 @@ public class Restaurante implements Serializable {
 	@JsonbTransient
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurante")
 	private ArrayList<Reserva> reservas;
-
+	
 	public Restaurante() {
 		// TODO Auto-generated constructor stub
 	}
