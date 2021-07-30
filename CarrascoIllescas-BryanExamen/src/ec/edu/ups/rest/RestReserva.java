@@ -72,7 +72,6 @@ public class RestReserva {
 
 	}
 
-	
 	@GET
 	@Path("{cedula}")
 	@Produces(MediaType.APPLICATION_JSON)
