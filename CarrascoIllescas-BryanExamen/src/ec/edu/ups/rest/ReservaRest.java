@@ -30,31 +30,41 @@ public class ReservaRest {
 
 	private Cliente cliente;
 	private Restaurante restaurante;
+	private Reserva reserva;
 
 	@POST
 	@Path("add")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-
-	public Response registrarReserva(String jsonReserva) throws IOException {
-		Jsonb jsonb = JsonbBuilder.create();
-		Reserva reserva = jsonb.fromJson(jsonReserva, Reserva.class);
-
-		cliente = ejClienteFacade.buscarCli(cliente.getCedula());
+	public Response registrarReserva(
+								@FormParam("cedula") String cedula,
+								@FormParam("numPersonas") Integer numPersonas,
+								@FormParam("fechaReserva") String fechaReserva,
+								@FormParam("horaReserva") String horaReserva,
+								@FormParam("nombreRest") String nombreRest
+			) throws IOException {
+		
+		cliente = ejClienteFacade.buscarCli(cedula);
 		if (cliente != null) {
-			restaurante = ejRestauranteFacade.buscarR(restaurante.getNombreRest());
 			try {
-				if (reserva.getNumPersonas() <= restaurante.getNumAforo()) {
+				restaurante = ejRestauranteFacade.buscarR(nombreRest);
+				if (numPersonas <= restaurante.getNumAforo()) {
 					Reserva rese = new Reserva();
-					rese.setNumPersonas(reserva.getNumPersonas());
-					rese.setFechaReserva(reserva.getFechaReserva());
-					rese.setHoraReserva(reserva.getHoraReserva());
+					rese.setNumPersonas(numPersonas);
+					rese.setFechaReserva(fechaReserva);
+					rese.setHoraReserva(horaReserva);
 					rese.setCliente(cliente);
-
-					ejReservaFacade.create(rese);
+					rese.setRestaurante(restaurante);
+					try {
+						ejReservaFacade.create(rese);	
+					}catch(Exception e) {
+						e.printStackTrace();
+						return Response.status(500).build();
+					}
+					
 					return Response.ok("Reserva creada OK").build();
 				}else {
-					return null;
+					return Response.ok("No se realizó la reserva por exceder el número de aforo").build();
 				}
 
 			} catch (Exception e) {

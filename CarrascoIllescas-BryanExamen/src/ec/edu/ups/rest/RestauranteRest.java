@@ -52,15 +52,13 @@ public class RestauranteRest {
 	}
 	
 	@GET
-	@Path("/{id}")
+	@Path("{nombreRest}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getIdEmp(@PathParam("codigoRest") Integer id) {
-		System.out.println("ENtra a api call");
-		System.out.println("Id del api="+id);
+	public Response getNombreRest(@PathParam("nombreRest") String nombreRest) {
 		Jsonb jsonb = JsonbBuilder.create();
 		Restaurante rest = new Restaurante();
 		try {
-			rest = ejRestauranteFacade.find(id);
+			rest = ejRestauranteFacade.buscarR(nombreRest);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		

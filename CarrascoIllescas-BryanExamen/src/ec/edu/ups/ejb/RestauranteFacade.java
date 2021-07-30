@@ -36,7 +36,7 @@ public class RestauranteFacade extends AbstractFacade<Restaurante> {
 	
 	public Restaurante buscarR (String nombreRest) {
 		try {
-			String jpql = "SELECT rest FROM Restaurante rest WHERE rest.nombreRest='"+nombreRest;
+			String jpql = "SELECT rest FROM Restaurante rest WHERE rest.nombreRest='"+nombreRest+ "'";
 			Restaurante resta = (Restaurante) em.createQuery(jpql).getSingleResult();
 			return resta;
 		}catch(Exception e) {

@@ -55,15 +55,13 @@ public class ClienteRest {
 	}
 	
 	@GET
-	@Path("/{id}")
+	@Path("{cedula}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getIdEmp(@PathParam("codigoCliente") Integer id) {
-		System.out.println("ENtra a api call");
-		System.out.println("Id del api="+id);
+	public Response getIdEmp(@PathParam("cedula") String cedula) {
 		Jsonb jsonb = JsonbBuilder.create();
 		Cliente cliente = new Cliente();
 		try {
-			cliente = ejClienteFacade.findCli(id);
+			cliente = ejClienteFacade.buscarCli(cedula);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
