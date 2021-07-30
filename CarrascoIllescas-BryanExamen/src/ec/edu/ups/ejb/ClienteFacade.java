@@ -27,7 +27,7 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
 	
 	public Cliente buscarCli (String cedula) {
 		try {
-			String jpql = "SELECTO cli FROM Cliente cli where cli.cedula='" + cedula;
+			String jpql = "SELECT cli FROM Cliente cli where cli.cedula='" + cedula;
 			Cliente cliente = (Cliente) em.createQuery(jpql).getSingleResult();
 			return cliente;
 		}catch(Exception e) {

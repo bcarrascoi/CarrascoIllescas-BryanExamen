@@ -24,6 +24,7 @@ public class ReservaBean  implements Serializable{
 
 	@EJB
 	private ReservaFacade ejReservaFacade;
+	private ClienteFacade ejClienteFacade;
 	
 	private List<Reserva>lista;
 	private Reserva reservas;
@@ -60,6 +61,13 @@ public class ReservaBean  implements Serializable{
 		this.ejReservaFacade = ejReservaFacade;
 	}
 
+	public ClienteFacade getEjClienteFacade() {
+		return ejClienteFacade;
+	}
+	public void setEjClienteFacade(ClienteFacade ejClienteFacade) {
+		this.ejClienteFacade = ejClienteFacade;
+	}
+	
 	public Reserva getReservas() {
 		return reservas;
 	}
@@ -107,7 +115,6 @@ public class ReservaBean  implements Serializable{
 	public String addReserva() {
 		
 		try {
-		
 			Reserva res = new Reserva();
 			res.setCodigoReserva(0);
 			res.setNumPersonas(this.numPersonas);

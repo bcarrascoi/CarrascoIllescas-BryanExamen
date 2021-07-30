@@ -126,9 +126,9 @@ public class RestauranteBean implements Serializable {
 	return "";
 	}
 	
-	public String buscarRestaurante(int codigoRest) {
-		System.out.println("El codigo ingresado es: " + this.codigoRest);
-		listaR = (List<Restaurante>) ejRestauranteFacade.buscarR(codigoRest);
+	public String buscarRestaurante(String nombreRest) {
+		System.out.println("El nombre ingresado es: " + this.nombreRest);
+		listaR = (List<Restaurante>) ejRestauranteFacade.buscarR(nombreRest);
 		return null;
 	}
 	
