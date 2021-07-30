@@ -21,4 +21,17 @@ public class ReservaFacade extends AbstractFacade<Reserva>{
 	protected EntityManager getEntityManager() {
 		return em;
 	}
+	 
+	public Reserva buscarCedulaCli(String cedula) {
+		try {
+			String jpql = "Select * from Reserva res, Cliente cli Where cli.codigoCliente = res.cliente_id AND cli.cedula ='"+cedula+"'";
+			Reserva reserva= (Reserva) em.createQuery(jpql).getSingleResult();
+			return reserva;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
 }

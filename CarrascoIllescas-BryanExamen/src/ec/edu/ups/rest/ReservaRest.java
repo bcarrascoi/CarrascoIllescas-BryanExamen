@@ -1,13 +1,16 @@
 package ec.edu.ups.rest;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -58,7 +61,18 @@ public class ReservaRest {
 		}
 
 	}
-	
-	
+	@GET
+	@Path("{cedula}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getIdEmp(@PathParam("cedula") String cedula) {
+		Jsonb jsonb = JsonbBuilder.create();
+		Reserva reserva = new Reserva();
+		try {
+			reserva = ejReservaFacade.buscarCedulaCli(cedula);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		return Response.ok(jsonb.toJson(reserva)).build();
+	}
 	
 }
