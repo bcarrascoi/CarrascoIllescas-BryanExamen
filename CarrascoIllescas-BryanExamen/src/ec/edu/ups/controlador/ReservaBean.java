@@ -11,6 +11,7 @@ import javax.faces.annotation.FacesConfig;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 
+import ec.edu.ups.ejb.ClienteFacade;
 import ec.edu.ups.ejb.ReservaFacade;
 import ec.edu.ups.entidad.Reserva;
 
@@ -104,7 +105,9 @@ public class ReservaBean  implements Serializable{
 	
 	
 	public String addReserva() {
+		
 		try {
+		
 			Reserva res = new Reserva();
 			res.setCodigoReserva(0);
 			res.setNumPersonas(this.numPersonas);
@@ -119,5 +122,8 @@ public class ReservaBean  implements Serializable{
 		}
 		return "index.html";
 	}
+	
+	
+	
 	
 }
