@@ -69,7 +69,7 @@ public class ClienteRest {
 	}
 	
 	@GET
-	@Path("/all")
+	@Path("all")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAllClientes() {
 		System.out.println(" ok");

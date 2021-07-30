@@ -24,7 +24,7 @@ public class ReservaFacade extends AbstractFacade<Reserva>{
 	 
 	public Reserva buscarCedulaCli(String cedula) {
 		try {
-			String jpql = "Select * from Reserva res, Cliente cli Where cli.codigoCliente = res.cliente_id AND cli.cedula ='"+cedula+"'";
+			String jpql = "SELECT res, cli FROM Reserva res, Cliente cli where cli.codigoCliente = res.cliente_id AND cli.cedula ='"+cedula+"'";
 			Reserva reserva= (Reserva) em.createQuery(jpql).getSingleResult();
 			return reserva;
 		}catch(Exception e) {
