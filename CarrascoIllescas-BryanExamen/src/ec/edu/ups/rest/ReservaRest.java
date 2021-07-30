@@ -6,7 +6,6 @@ import javax.ejb.EJB;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -27,54 +26,39 @@ public class ReservaRest {
 	private ReservaFacade ejReservaFacade;
 	private ClienteFacade ejClienteFacade;
 	private RestauranteFacade ejRestauranteFacade;
-
-	private Cliente cliente;
-	private Restaurante restaurante;
-	private Reserva reserva;
-
+	
 	@POST
 	@Path("add")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response registrarReserva(
-								@FormParam("cedula") String cedula,
-								@FormParam("numPersonas") Integer numPersonas,
-								@FormParam("fechaReserva") String fechaReserva,
-								@FormParam("horaReserva") String horaReserva,
-								@FormParam("nombreRest") String nombreRest
-			) throws IOException {
-		
-		cliente = ejClienteFacade.buscarCli(cedula);
-		if (cliente != null) {
+	public Response registrarReserva(String jsonRe) throws IOException {
+		Jsonb jsonb = JsonbBuilder.create();
+		Reserva reserva = jsonb.fromJson(jsonRe, Reserva.class);
+
+		Cliente cli = ejClienteFacade.findCli(reserva.getCliente().getCodigoCliente());
+		if (cli != null) {
 			try {
-				restaurante = ejRestauranteFacade.buscarR(nombreRest);
-				if (numPersonas <= restaurante.getNumAforo()) {
-					Reserva rese = new Reserva();
-					rese.setNumPersonas(numPersonas);
-					rese.setFechaReserva(fechaReserva);
-					rese.setHoraReserva(horaReserva);
-					rese.setCliente(cliente);
-					rese.setRestaurante(restaurante);
-					try {
-						ejReservaFacade.create(rese);	
-					}catch(Exception e) {
-						e.printStackTrace();
-						return Response.status(500).build();
-					}
-					
-					return Response.ok("Reserva creada OK").build();
-				}else {
-					return Response.ok("No se realizó la reserva por exceder el número de aforo").build();
-				}
+				Reserva reser = new Reserva();
+				reser.setNumPersonas(reserva.getNumPersonas());
+				reser.setFechaReserva(reserva.getFechaReserva());
+				reser.setHoraReserva(reserva.getHoraReserva());
+				reser.setCliente(cli);
+
+				Restaurante rest = ejRestauranteFacade.buscarR(reser.getRestaurante().getNombreRest());
+				reser.setRestaurante(rest);
+				ejReservaFacade.create(reser);
+				return Response.ok("Reserva OK ").build();
 
 			} catch (Exception e) {
 				e.printStackTrace();
 				return Response.status(500).build();
 			}
 		} else {
-			return Response.ok("La cedula no existe").build();
+			return Response.ok("Cedula no OK").build();
 		}
 
 	}
-
+	
+	
+	
 }
